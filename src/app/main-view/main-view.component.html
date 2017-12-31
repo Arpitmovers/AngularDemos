@@ -1,0 +1,32 @@
+<div class="container">
+
+
+	<div class="btn-group btn-group-md">
+	  <button type="button" class="btn btn-primary" (click)="Sort(24)">24 Hour</button>
+	  <button type="button" class="btn btn-primary" (click)="Sort(7)">7 days</button>
+	</div>
+	<input type="text" placeholder="Enter currency to Filter.." id="cur" (input)="filterAll(inpCurr)" #inpCurr/>
+
+	<div class="row currEach"  *ngFor="let curr of currArr;let i =index">
+		<div class="col-md-4">
+			<b>{{curr.symbol}}</b>|<span>{{curr.name}}</span>  <span style="float:right;">{{curr.price_usd}}</span>
+			<hr style="margin:2px;">
+
+
+			<span>24h:
+				<span [ngClass]=" curr.percent_change_24h < 0 ?  'neg' :'positive' ">
+					{{curr.percent_change_24h}}
+				</span> 
+			 </span> 
+
+
+			<span style="float:right;">7 days:
+				<span [ngClass]=" curr.percent_change_7d < 0 ?  'neg' :'positive' ">
+						{{curr.percent_change_7d}}%
+				</span>
+			</span>	
+
+		</div>
+	</div>
+
+</div>

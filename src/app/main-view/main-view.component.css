@@ -1,0 +1,19 @@
+.container{
+ margin-top: 15px;
+}
+.row{
+	padding-top:1%;
+	padding-bottom: 1%;
+}
+
+.sevDays{
+	color: red;
+}
+
+.positive{
+
+	color: cyan;
+}
+.neg{
+	color: red;
+}
